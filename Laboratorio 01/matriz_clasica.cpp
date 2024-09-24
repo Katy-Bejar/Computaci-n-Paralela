@@ -6,7 +6,7 @@
 
 using namespace std;
 
-void Matrices_multiplicacion(const vector<vector<int>>& A, const vector<vector<int>>& B, vector<vector<int>>& C, int n) {
+void multiplyMatrices(const vector<vector<int>>& A, const vector<vector<int>>& B, vector<vector<int>>& C, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) {
             C[i][j] = 0;
@@ -34,7 +34,7 @@ int main() {
     }
 
     auto start = chrono::high_resolution_clock::now();
-    Matrices_multiplicacion(A, B, C, n);
+    multiplyMatrices(A, B, C, n);
     auto end = chrono::high_resolution_clock::now();
     auto duration = chrono::duration_cast<chrono::microseconds>(end - start).count();
     cout << "Tiempo de ejecución: " << duration << " microsegundos\n";
